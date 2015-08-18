@@ -36,33 +36,6 @@
     <DocumentationFile>..\..\..\..\build\release\Castle.Blade.Web.XML</DocumentationFile>
     <OtherFlags>--keyfile:..\..\..\..\buildscripts\CastleKey.snk</OtherFlags>
   </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="mscorlib" />
-    <Reference Include="System" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Numerics" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Internal.AssemblyInfo.fs" />
-    <Compile Include="Helper.fs" />
-    <Compile Include="ConfigSupport.fs" />
-    <Compile Include="Hosting.fs" />
-    <Compile Include="BuildProvider.fs" />
-    <Compile Include="TemplateTypes.fs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Castle.Blade\Castle.Blade.fsproj">
-      <Name>Castle.Blade</Name>
-      <Project>{51fc792e-69d3-41c4-937e-4abac181d918}</Project>
-      <Private>True</Private>
-    </ProjectReference>
-  </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
   </PropertyGroup>
@@ -79,6 +52,41 @@
     </Otherwise>
   </Choose>
   <Import Project="$(FSharpTargetsPath)" Condition="Exists('$(FSharpTargetsPath)')" />
+  <ItemGroup>
+    <Compile Include="Internal.AssemblyInfo.fs" />
+    <Compile Include="Helper.fs" />
+    <Compile Include="ConfigSupport.fs" />
+    <Compile Include="Hosting.fs" />
+    <Compile Include="BuildProvider.fs" />
+    <Compile Include="TemplateTypes.fs" />
+    <Content Include="packages.config" />
+    <Content Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="FParsec">
+      <HintPath>..\..\..\..\packages\FParsec.1.0.1\lib\net40-client\FParsec.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FParsecCS">
+      <HintPath>..\..\..\..\packages\FParsec.1.0.1\lib\net40-client\FParsecCS.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <ProjectReference Include="..\Castle.Blade\Castle.Blade.fsproj">
+      <Name>Castle.Blade</Name>
+      <Project>{51fc792e-69d3-41c4-937e-4abac181d918}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
 	     Other similar extension points exist, see Microsoft.Common.targets.
 	<Target Name="BeforeBuild">

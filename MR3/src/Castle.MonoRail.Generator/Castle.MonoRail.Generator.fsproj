@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+	<PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
@@ -9,11 +10,11 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>Castle.MonoRail.Generator</RootNamespace>
     <AssemblyName>mrtypegen</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
-    <TargetFrameworkProfile>
+		<TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+		<TargetFSharpCoreVersion>4.3.1.0</TargetFSharpCoreVersion>
+		<TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <Name>Castle.MonoRail.Generator</Name>
-    <TargetFSharpCoreVersion>4.3.0.0</TargetFSharpCoreVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -26,7 +27,7 @@
     <PlatformTarget>x86</PlatformTarget>
     <DocumentationFile>
     </DocumentationFile>
-    <StartArguments>-b:C:\dev\clear\repos\Clear.PremiumTrader.Web\Platform\src\Clear.PremiumTrader.Web\bin\Clear.PremiumTrader.Web.dll -t:C:\dev\clear\repos\Clear.PremiumTrader.Web\Platform\src\Clear.PremiumTrader.Web\Routes</StartArguments>
+    <StartArguments>-b:C:\dev\clear\repos\Clear.PremiumTrader.Web\Platform\src\Clear.PremiumTrader.Intranet\bin\Clear.PremiumTrader.Intranet.dll -t:C:\dev\clear\repos\Clear.PremiumTrader.Web\Platform\src\Clear.PremiumTrader.Intranet\Routes</StartArguments>
     <StartWorkingDirectory>
     </StartWorkingDirectory>
   </PropertyGroup>
@@ -71,10 +72,19 @@
     </Compile>
     <Compile Include="Api.fs" />
     <Compile Include="Program.fs" />
+    <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Castle.Extensibility">
       <HintPath>..\..\lib\Castle.Extensibility.dll</HintPath>
+    </Reference>
+    <Reference Include="FParsec">
+      <HintPath>..\..\packages\FParsec.1.0.1\lib\net40-client\FParsec.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FParsecCS">
+      <HintPath>..\..\packages\FParsec.1.0.1\lib\net40-client\FParsecCS.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <Private>True</Private>
