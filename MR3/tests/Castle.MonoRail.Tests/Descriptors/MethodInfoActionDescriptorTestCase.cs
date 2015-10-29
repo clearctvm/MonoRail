@@ -30,7 +30,7 @@
 		{
 			var desc = new MethodInfoActionDescriptor(_indexAction, _controllerDesc);
 			desc.Should().NotBeNull();
-			desc._allowedVerbs.Should().BeEmpty();
+			desc.AllowedVerbs.Should().BeEmpty();
 		}
 
 		[Test]
@@ -38,9 +38,9 @@
 		{
 			var desc = new MethodInfoActionDescriptor(_actionPutAction, _controllerDesc);
 			desc.Should().NotBeNull();
-			desc._allowedVerbs.Should().NotBeEmpty();
-			desc._allowedVerbs.Should().HaveCount(1);
-			desc._allowedVerbs.ElementAt(0).Should().Be("PUT");
+			desc.AllowedVerbs.Should().NotBeEmpty();
+			desc.AllowedVerbs.Should().HaveCount(1);
+			desc.AllowedVerbs.ElementAt(0).Should().Be("PUT");
 		}
 
 		[Test]
@@ -48,10 +48,10 @@
 		{
 			var desc = new MethodInfoActionDescriptor(_action2Action, _controllerDesc);
 			desc.Should().NotBeNull();
-			desc._allowedVerbs.Should().NotBeEmpty();
-			desc._allowedVerbs.Should().HaveCount(2);
-			desc._allowedVerbs.Should().Contain("PUT");
-			desc._allowedVerbs.Should().Contain("POST");
+			desc.AllowedVerbs.Should().NotBeEmpty();
+			desc.AllowedVerbs.Should().HaveCount(2);
+			desc.AllowedVerbs.Should().Contain("PUT");
+			desc.AllowedVerbs.Should().Contain("POST");
 		}
 
 		public class FakeController

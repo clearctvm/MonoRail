@@ -199,10 +199,10 @@ namespace Castle.MonoRail.Routing
             then "/" + build_qs parameters
             else result + build_qs parameters
 
-        member internal x.HasConfig = _config <> null
-        member internal this.DefaultValues = _defValues.Force()
-        member internal this.InvariablesValues = _invariablesValues.Force()
-        member internal this.RouteNodes = routeNodes
+        member public x.HasConfig = _config <> null
+        member public this.DefaultValues = _defValues.Force()
+        member public this.InvariablesValues = _invariablesValues.Force()
+        member public this.RouteNodes = routeNodes
 
 
     and [<AllowNullLiteral>] RouteConfig(route:Route) =

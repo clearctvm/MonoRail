@@ -127,6 +127,8 @@ namespace Castle.MonoRail.Hosting.Mvc.Typed
                 then String.Compare(this.Name, actionName, StringComparison.OrdinalIgnoreCase) = 0
                 else String.Compare(_canonicalName, actionName, StringComparison.OrdinalIgnoreCase) = 0
 
+            member public this.AllowedVerbs = _allowedVerbs
+
             interface ICustomAttributeProvider with                 
                 member x.IsDefined(attType, ``inherit``) = 
                     methodInfo.IsDefined(attType, ``inherit``)
