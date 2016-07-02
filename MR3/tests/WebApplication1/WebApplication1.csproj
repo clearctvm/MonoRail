@@ -106,6 +106,10 @@
     <Folder Include="modules\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\src\Castle.Blade\src\Castle.Blade.Web\Castle.Blade.Web.fsproj">
+      <Project>{8df9e981-2558-4efd-a455-5459f36a9b03}</Project>
+      <Name>Castle.Blade.Web</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Castle.Blade\src\Castle.Blade\Castle.Blade.fsproj">
       <Project>{51FC792E-69D3-41C4-937E-4ABAC181D918}</Project>
       <Name>Castle.Blade</Name>
@@ -117,10 +121,6 @@
     <ProjectReference Include="..\..\src\Castle.MonoRail\Castle.MonoRail.fsproj">
       <Project>{8C35651E-A56E-4771-95CA-E312AA318538}</Project>
       <Name>Castle.MonoRail</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WebApplication1Mod1\WebApplication1Mod1.fsproj">
-      <Project>{84BCA422-D499-44A4-8AD3-5039238B77BE}</Project>
-      <Name>WebApplication1Mod1</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -108,6 +108,42 @@
                     put: function() { return vpath + '/'; }
                 },
 
+                LongRunning: {
+                    get: function (params) {
+                        return vpath + (params == undefined ? '/Root/LongRunning' : '/Root/LongRunning?' + jQuery.param(params));
+                    },
+                    post: function() { return vpath + '/Root/LongRunning'; },
+                    del: function() { return vpath + '/Root/LongRunning'; },
+                    put: function() { return vpath + '/Root/LongRunning'; }
+                },
+
+                LongRunning2: {
+                    get: function (params) {
+                        return vpath + (params == undefined ? '/Root/LongRunning2' : '/Root/LongRunning2?' + jQuery.param(params));
+                    },
+                    post: function() { return vpath + '/Root/LongRunning2'; },
+                    del: function() { return vpath + '/Root/LongRunning2'; },
+                    put: function() { return vpath + '/Root/LongRunning2'; }
+                },
+
+                LongRunning3: {
+                    get: function (params) {
+                        return vpath + (params == undefined ? '/Root/LongRunning3' : '/Root/LongRunning3?' + jQuery.param(params));
+                    },
+                    post: function() { return vpath + '/Root/LongRunning3'; },
+                    del: function() { return vpath + '/Root/LongRunning3'; },
+                    put: function() { return vpath + '/Root/LongRunning3'; }
+                },
+
+                LongRunning4: {
+                    get: function (params) {
+                        return vpath + (params == undefined ? '/Root/LongRunning4' : '/Root/LongRunning4?' + jQuery.param(params));
+                    },
+                    post: function() { return vpath + '/Root/LongRunning4'; },
+                    del: function() { return vpath + '/Root/LongRunning4'; },
+                    put: function() { return vpath + '/Root/LongRunning4'; }
+                },
+
                 ReplyWith304: {
                     get: function (params) {
                         return vpath + (params == undefined ? '/Root/ReplyWith304' : '/Root/ReplyWith304?' + jQuery.param(params));

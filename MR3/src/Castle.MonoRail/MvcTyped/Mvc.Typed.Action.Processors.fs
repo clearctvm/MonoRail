@@ -79,10 +79,19 @@ namespace Castle.MonoRail.Hosting.Mvc.Typed
                 |> Seq.toArray
 
             let mutable processNext = true
-
+            
             try
                 try
-                    context.Result <- context.ActionDescriptor.Execute(context.Prototype.Instance, parameters)
+
+                    if typeof<System.Threading.Tasks.Task>.IsAssignableFrom(context.ActionDescriptor.ReturnType) then
+                        context.Result <- Async.RunSynchronously( async {
+                            let task = context.ActionDescriptor.Execute(context.Prototype.Instance, parameters) :?> System.Threading.Tasks.Task<ActionResult>
+                            let! result = Async.AwaitTask(task)
+                            return result
+                        })
+                    else
+                        context.Result <- context.ActionDescriptor.Execute(context.Prototype.Instance, parameters)
+
                 with
                 | ex -> 
                     context.Exception <- ex
