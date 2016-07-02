@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Castle.MonoRail</RootNamespace>
     <AssemblyName>Castle.MonoRail</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <Name>Castle.MonoRail</Name>
     <TargetFrameworkProfile />
   </PropertyGroup>

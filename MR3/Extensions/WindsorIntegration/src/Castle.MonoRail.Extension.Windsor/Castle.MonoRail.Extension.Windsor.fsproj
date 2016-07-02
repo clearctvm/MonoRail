@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Castle.MonoRail.Extension.Windsor</RootNamespace>
     <AssemblyName>Castle.MonoRail.Extension.Windsor</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <Name>Castle.MonoRail.Extension.Windsor</Name>
     <TargetFrameworkProfile />
     <TargetFSharpCoreVersion>4.3.1.0</TargetFSharpCoreVersion>

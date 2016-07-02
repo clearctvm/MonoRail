@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Castle.Blade2</RootNamespace>
     <AssemblyName>Castle.Blade</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <Name>Castle.Blade2</Name>
     <TargetFrameworkProfile />
     <TargetFSharpCoreVersion>4.3.1.0</TargetFSharpCoreVersion>
